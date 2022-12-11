@@ -1,5 +1,5 @@
 //Component EventBoard
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 import { EventCard } from 'components/EventCard/EventCard';
 import css from './EventBoard.module.css';
 export const EventBoard = ({ events }) => {
@@ -24,17 +24,17 @@ export const EventBoard = ({ events }) => {
 	
 };
 
-// EventBoard.propTypes = {
-// 	events: PropTypes.arrayOf(
-// 		PropTypes.exact({
-// 			name: PropTypes.string.isRequired,
-// 			location: PropTypes.string.isRequired,
-// 			type: PropTypes.string.isRequired,
-// 			speaker: PropTypes.string.isRequired,
-// 			time: {
-// 				start: PropTypes.string.isRequired,
-// 				end: PropTypes.string.isRequired,
-// 			},
-// 		}),
-// 	),
-// };
+EventBoard.propTypes = {
+	events: PropTypes.arrayOf(
+		PropTypes.exact({
+			name: PropTypes.string.isRequired,
+			location: PropTypes.string.isRequired,
+			type: PropTypes.string.isRequired,
+			speaker: PropTypes.string.isRequired,
+			time: PropTypes.exact( {
+				start: PropTypes.string.isRequired,
+				end: PropTypes.string.isRequired,
+			}),
+		}),
+	),
+};

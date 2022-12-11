@@ -1,8 +1,9 @@
 //Component EventCard
 import PropType from 'prop-types';
 import { FaMapMarkerAlt, FaFortAwesomeAlt, FaCalendarAlt, FaClock } from "react-icons/fa"; //либа иконки
-import { formatEventStar } from 'utils/formatEventStar';
-import { formatEventDuration } from 'utils/formatEventDuration';
+// import { formatEventStar } from 'utils/formatEventStar';
+// import { formatEventDuration } from 'utils/formatEventDuration';
+import { formatEventStar, formatEventDuration } from 'utils';
 import css from './EventCard.module.css';
 export const EventCard = ({ name, location, type, speaker, start, end }) => {
 	const formatedDate = formatEventStar(start);
@@ -30,7 +31,7 @@ export const EventCard = ({ name, location, type, speaker, start, end }) => {
 				<i className={css.chip}></i>
 				{formatDuration}
 			</p>
-			{/* <span className="chip free|paid|vip">Event type</span> */}
+			<span className={`${css.chip} ${css[type]}`}>{type}</span>
 		</div>
 	);
 };
